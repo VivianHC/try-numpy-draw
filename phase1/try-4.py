@@ -18,14 +18,22 @@ plt.plot(x, S)
 
 # 在ipython的交互环境中需要这句话才能显示出来
 '''
-start = -100
-stop = 100
-point_num = 10000
-plt.show()
-x = np. linspace(start, stop, point_num, endpoint=True)
-a = 2
-b = 50
+from mpl_toolkits.mplot3d import Axes3D
+fig=plt.figure()
+ax=fig.gca(projection='3d')
+start = -10
+stop = 10
+point_num = 970
 
-y =x* (x-8)/(x-9)
-plt.plot(x, y)
+
+x = np. linspace(start, stop, point_num, endpoint=False)
+y=1-x
+z =(x* x)/(x+2)+y**2/(y+1)
+print(z.min())
+ax.plot(x,y,z,label='parametric curve')
+ax.set_xlabel('X Label')
+ax.set_ylabel('Y Label')
+ax.set_zlabel('Z Lable')
+print(z.min())
+ax.legend()
 plt.show()

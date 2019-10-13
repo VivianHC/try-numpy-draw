@@ -18,14 +18,15 @@ plt.plot(x, S)
 
 # 在ipython的交互环境中需要这句话才能显示出来
 '''
-start = -100
-stop = 100
+start = 0
+stop = 1
 point_num = 10000
 plt.show()
 x = np. linspace(start, stop, point_num, endpoint=True)
 a = 2
 b = 50
 
-y =x* (x-8)/(x-9)
+y =(x* x)/(x+2)+(1-x)**2/(-x+2)
 plt.plot(x, y)
-plt.show()
+title='min(y)=%0.2f'%y.min()
+plt.title(title)
